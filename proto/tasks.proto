@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package task_distributor;
+
+import "google/protobuf/empty.proto";
+
+enum TaskType {
+  ADD = 0;
+  SUBTRACT = 1;
+  MULTIPLY = 2;
+  DIVIDE = 3;
+}
+
+enum TaskStatus {
+  QUEUED = 0;
+  RUNNING = 1;
+  DONE = 2;
+  FAILED = 3;
+}
+
+
+message Task {
+  string id = 1; // Task identifier
+  TaskType type = 2; // Type of operation
+  double operand1 = 3; // First operand
+  double operand2 = 4; // Second operand
+  int32 timeout = 5; // Timeout in seconds
+  int32 processing_time = 6; // Simulated execution time in seconds
+}
+
+message TaskResult {
+  string id = 1; // Task identifier
+  TaskStatus status = 2; // Status of the task
+  string description = 3; // Optional description eg. for error
+  double result = 4; // Optional result of the task
+}
+
+message WorkerProperties {
+  string id = 1; // Worker identifier
+  repeated TaskType capabilities = 2; // Capabilities of the worker
+}
+
+service TaskDistributor {
+  rpc SubmitTask (Task) returns (TaskResult);
+  rpc PublishProperties (WorkerProperties) returns (google.protobuf.Empty);
+}
