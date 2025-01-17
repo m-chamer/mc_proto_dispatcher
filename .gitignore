@@ -1,0 +1,106 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environment
+env/
+venv/
+ENV/
+*.env
+*.venv
+
+# PyCharm project files
+.idea/
+
+# pytest
+.cache/
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.bak
+*.swp
+*.tmp
+*.temp
+
+# Coverage reports
+htmlcov/
+.coverage
+*.cover
+*.coverage.*
+.cache
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre
+.pyre/
+
+# Pytest reports
+.pytest_cache/
+.cache/
+
+# Profiling data
+*.prof
+
+# Test and build directories
+.tox/
+.nox/
+dist/
+build/
+site/
+
+# Wheel files
+*.egg
+*.egg-info/
+*.eggs
+
+# PEP 582; used by projects adopting the new PEP 582 structure
+__pypackages__/
+
+# Celery
+celerybeat-schedule
+
+# SageMath
+*.sage.py
+
+# Environments and tools
+.env
+.venv
+.pdm.toml
+poetry.lock
+Pipfile
+Pipfile.lock
+__pypackages__/
+
+# VS Code workspace and settings
+.vscode/
+
+# Local IDE configs
+.idea/
+
+# Other IDE-specific files
+*.iml
+*.ipr
+*.iws
+
+# Linting
+.pylintrc
+flake8
+.pyre/
