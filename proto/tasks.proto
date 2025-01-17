@@ -1,23 +1,20 @@
 syntax = "proto3";
 
-package task_distributor;
-
-import "google/protobuf/empty.proto";
-
 enum TaskType {
-  ADD = 0;
-  SUBTRACT = 1;
-  MULTIPLY = 2;
-  DIVIDE = 3;
+  DEFAULT = 0;
+  ADD = 1;
+  SUBTRACT = 2;
+  MULTIPLY = 3;
+  DIVIDE = 4;
 }
 
 enum TaskStatus {
-  QUEUED = 0;
-  RUNNING = 1;
-  DONE = 2;
-  FAILED = 3;
+  UNKNOWN = 0;
+  QUEUED = 1;
+  RUNNING = 2;
+  DONE = 3;
+  FAILED = 4;
 }
-
 
 message Task {
   string id = 1; // Task identifier
@@ -38,9 +35,4 @@ message TaskResult {
 message WorkerProperties {
   string id = 1; // Worker identifier
   repeated TaskType capabilities = 2; // Capabilities of the worker
-}
-
-service TaskDistributor {
-  rpc SubmitTask (Task) returns (TaskResult);
-  rpc PublishProperties (WorkerProperties) returns (google.protobuf.Empty);
 }
