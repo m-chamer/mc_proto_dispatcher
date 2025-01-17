@@ -92,10 +92,10 @@ class TaskHandlerFactory:
     Factory class for creating task handlers based on task type
     """
     handlers = {
-        "Add": AddHandler,
-        "Subtract": SubtractHandler,
-        "Multiply": MultiplyHandler,
-        "Divide": DivideHandler
+        "ADD": AddHandler,
+        "SUBTRACT": SubtractHandler,
+        "MULTIPLY": MultiplyHandler,
+        "DIVIDE": DivideHandler
     }
 
     @staticmethod
